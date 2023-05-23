@@ -54,7 +54,7 @@ rx.Vgo_total = total_field(rx.Vgo, '5D');
 
 %% RECEPTION POWER AND EFFICIENCY
 [rx.Prx, rx.eta] = rx_power(rx.Vgo, tx.Va, tx.rad_power, wave.E0, ...
-    feed.D / 2, sph_grid, rx.sph_grid);
+    reflector.D / 2, sph_grid, rx.sph_grid);
 rx.Prx_norm = norm_magnitude(rx.Prx, 'dB');
 
 %% RECEPTION DIRECTIVITY AND GAIN

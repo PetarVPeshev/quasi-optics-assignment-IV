@@ -65,7 +65,7 @@ for idx = 1 : 1 : length(feed.D)
     %% RECEPTION POWER AND EFFICIENCY
     [rx.Prx(:, :, idx), rx.eta(:, :, idx)] = rx_power(rx.Vgo, ...
         tx.Va(:, :, :, idx), tx.rad_power(idx), wave.E0, ...
-        feed.D(idx) / 2, sph_grid, rx.sph_grid);
+        reflector.D / 2, sph_grid, rx.sph_grid);
     rx.Prx_norm(:, :, idx) = norm_magnitude(rx.Prx(:, :, idx), 'dB');
     rx.eta_max(idx) = max(rx.eta(:, :, idx), [], 'all');
 end
